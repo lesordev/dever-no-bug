@@ -1,0 +1,63 @@
+{
+  "name": "admin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "app/admin",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "app/admin",
+        "outputPath": "dist/app/admin"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "app/admin"
+        },
+        "production": {}
+      }
+    },
+    "start": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "admin:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "admin:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "admin:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "admin:build:production"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "app/admin/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "admin"
+  ]
+}
