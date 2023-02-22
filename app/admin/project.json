@@ -6,9 +6,7 @@
   "targets": {
     "build": {
       "executor": "@nrwl/next:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "root": "app/admin",
@@ -31,7 +29,8 @@
       "configurations": {
         "development": {
           "buildTarget": "admin:build:development",
-          "dev": true
+          "dev": true,
+          "port": 3000
         },
         "production": {
           "buildTarget": "admin:build:production",
@@ -47,17 +46,11 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "app/admin/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["app/admin/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
-  "tags": [
-    "admin"
-  ]
+  "tags": ["admin"]
 }

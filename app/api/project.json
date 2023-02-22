@@ -1,0 +1,48 @@
+{
+  "name": "api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "app/api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/app/api",
+        "main": "app/api/src/main.ts",
+        "tsConfig": "app/api/tsconfig.app.json",
+        "assets": ["app/api/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "app/api/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false
+        }
+      }
+    },
+    "start": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "api:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["app/api/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["api"]
+}
