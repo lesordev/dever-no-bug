@@ -1,9 +1,11 @@
 import { PropsWithChildren } from 'react';
 
+import '../styles/index.css';
+
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html>
-      <title>Dever no Bug</title>
+      <head />
       <body>{children}</body>
     </html>
   );

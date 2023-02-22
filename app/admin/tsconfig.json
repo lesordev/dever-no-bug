@@ -23,13 +23,16 @@
     "**/*.js",
     "**/*.jsx",
     "next-env.d.ts",
+    "../../dist/app/admin/.next/types/**/*.ts",
     "../../app/admin/.next/types/**/*.ts",
-    "../../dist/app/admin/.next/types/**/*.ts"
+    "../../postcss.config.js",
+    "../../tailwind.config.js"
   ],
   "exclude": [
     "node_modules",
     "jest.config.ts",
     "src/**/*.spec.ts",
-    "src/**/*.test.ts"
+    "src/**/*.test.ts",
+    "../../dist/app/admin/.next/types/**/*.ts"
   ]
 }
