@@ -2,7 +2,10 @@
   "name": "dever-no-bug",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx run-many --target=build",
+    "start": "nx run-many start --target=start --configuration=production"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^9.0.0",
@@ -19,6 +22,8 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
+    "@nestjs/apollo": "^10.2.0",
+    "@nestjs/graphql": "^10.2.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
     "@nrwl/eslint-plugin-nx": "15.7.2",
@@ -35,6 +40,7 @@
     "@types/react-dom": "18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
+    "apollo-server-express": "^3.11.1",
     "autoprefixer": "^10.4.13",
     "eslint": "~8.15.0",
     "eslint-config-next": "13.1.1",
@@ -43,6 +49,8 @@
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-react": "7.31.11",
     "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "graphql": "^16.6.0",
     "nx": "15.7.2",
     "postcss": "^8.4.21",
     "prettier": "^2.6.2",
