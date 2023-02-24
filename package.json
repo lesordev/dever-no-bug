@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "nx run-many --target=build",
-    "start": "nx run-many start --target=start --configuration=production"
+    "start": "nx run-many --target=start --configuration=production"
   },
   "private": true,
   "dependencies": {
